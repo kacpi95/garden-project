@@ -10,17 +10,20 @@
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
-          <a href="/"
+          <a href="/" class="header__logo"
             ><img src="/images/logo/logo-header.svg" alt="Giarddesign logo"
           /></a>
-          <nav class="header-nav">
-            <ul class="header-menu-list">
+          <nav class="header__nav">
+            <ul class="header__menu">
               <li class="header__item header__item--dropdown">
-                <a href="#" class="header__link">Oferta</a>
-                <img
-                  src="/images/icons/arrow-down-black-nav.svg"
-                  alt="Downward pointing arrow icon"
-                />
+                <a href="#" class="header__link">
+                  <span>Oferta</span>
+                  <img
+                    class="header__arrow"
+                    src="/images/icons/arrow-down-black-nav.svg"
+                    alt=""
+                  />
+                </a>
               </li>
               <li class="header__item">
                 <a href="#" class="header__link">O firmie</a>
@@ -32,10 +35,11 @@
                 <a href="#" class="header__link">Kontakt</a>
               </li>
               <li class="header__item">
-                <button class="header__search">
+                <button class="header__search" aria-label="Search">
                   <img
                     src="/images/icons/search.svg"
-                    alt="Icon magnifying glass for searching"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </button>
               </li>

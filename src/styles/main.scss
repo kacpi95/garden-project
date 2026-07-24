@@ -3,4 +3,6 @@
 @use './base/reset';
 @use './base/typography';
 
+@use './sections/header';
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@500&display=swap');
