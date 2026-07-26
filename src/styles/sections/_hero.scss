@@ -1,0 +1,189 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+.hero {
+  background: $color-secondary;
+  overflow: hidden;
+
+  &__wrapper {
+    row-gap: $space-lg;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    padding: $space-xl 0;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: $fs-h2;
+    font-weight: $fw-medium;
+    line-height: $lh-heading;
+    color: $color-black;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: $fs-base;
+    line-height: $lh-body;
+    color: $color-black;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-xs;
+    width: fit-content;
+    padding: 0.75rem 1.5rem 0.875rem;
+    border-radius: $radius-pill;
+    text-decoration: none;
+    font-size: $fs-base;
+    transition:
+      background-color 0.45s ease,
+      color 0.45s ease,
+      border-color 0.45s ease,
+      transform 0.45s ease;
+
+    img {
+      transition: transform 0.45s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &--primary {
+      background: $color-primary;
+      color: $color-background;
+      &:hover {
+        background-color: $color-secondary;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+      }
+    }
+
+    &--secondary {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-background;
+
+        img {
+          content: url('/images/icons/arrow-right-grey.svg');
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 100%;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    gap: $space-lg;
+    padding: $space-md $space-lg;
+    background: $color-background;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    &__buttons {
+      flex-direction: row;
+      gap: 2.25rem;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 737px;
+
+    &__wrapper {
+      align-items: center;
+      min-height: inherit;
+    }
+
+    &__content {
+      max-width: 599px;
+      gap: 72px;
+      padding: 0;
+    }
+
+    &__title {
+      font-size: $fs-display;
+      line-height: $lh-display;
+    }
+
+    &__description {
+      max-width: 489px;
+    }
+
+    &__photo {
+      width: 688px;
+      height: 737px;
+      max-width: none;
+    }
+
+    &__controls {
+      width: 192px;
+      height: 96px;
+      padding: 24px 32px;
+      gap: 32px;
+    }
+
+    &__control {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @media (min-width: $wide) {
+    &__controls {
+      right: -52px;
+    }
+  }
+}
