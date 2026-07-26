@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2",
     "sass": "^1.101.3"
   }
 }
