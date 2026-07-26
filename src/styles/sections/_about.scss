@@ -1,0 +1,160 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+.about {
+  background: $color-primary;
+
+  &__wrapper {
+    position: relative;
+    padding-top: 50px;
+  }
+
+  &__image {
+    margin-inline: -12px;
+
+    img {
+      display: block;
+      padding: 0 10px;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5rem;
+    padding: $space-3xl 0;
+    color: $color-background;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    max-width: 500px;
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: $fs-xs;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 249px;
+    font-family: $font-heading;
+    font-size: $fs-h2;
+    font-weight: $fw-medium;
+    line-height: $lh-heading;
+    letter-spacing: -0.03em;
+
+    span {
+      font-style: italic;
+      font-family: $font-primary;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: $fs-base;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    width: fit-content;
+    padding: 0.75rem 1.3rem 0.9rem;
+    border: 1px solid $color-background;
+    border-radius: $radius-pill;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
+
+    img {
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      background: $color-background;
+      color: $color-primary;
+
+      img {
+        content: url('/images/icons/arrow-right-green.svg');
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  @media (min-width: $laptop) {
+    &__wrapper {
+      padding-top: 0;
+    }
+
+    &__image {
+      margin-left: -120px;
+
+      img {
+        width: 688px;
+        height: 720px;
+      }
+    }
+
+    &__content {
+      padding-left: 64px;
+    }
+
+    &__title {
+      font-size: 2.75rem;
+    }
+
+    &__text,
+    &__description {
+      max-width: 420px;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    &__wrapper {
+      min-height: 720px;
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: -120px;
+      width: 688px;
+      height: 720px;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    }
+
+    &__content {
+      min-height: 720px;
+      padding: 0 0 0 96px;
+    }
+
+    &__title {
+      font-size: $fs-h1;
+    }
+  }
+}
