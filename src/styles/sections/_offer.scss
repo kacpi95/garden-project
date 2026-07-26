@@ -1,0 +1,175 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+.offer {
+  padding: $space-2xl 0;
+  background-color: $color-background;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2xl;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: $fs-xs;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+    color: $color-primary;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    max-width: 45rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: $fs-h2;
+    font-weight: $fw-medium;
+    line-height: $lh-heading;
+    letter-spacing: -0.03em;
+    color: $color-black;
+
+    span {
+      font-weight: inherit;
+      font-style: italic;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: $fs-base;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+    color: $color-black;
+  }
+
+  &__cards {
+    row-gap: $space-lg;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $space-lg;
+    width: 100%;
+    min-height: 23rem;
+    padding: $space-xl $space-md;
+    background-color: $color-white;
+    border-radius: 1.75rem;
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__card-icon {
+    display: flex;
+    align-items: center;
+    height: 2.75rem;
+    margin-bottom: 1.25rem;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__card-title {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: $fs-h3;
+    font-weight: $fw-medium;
+    line-height: $lh-heading;
+    letter-spacing: -0.05em;
+    color: $color-black;
+  }
+
+  &__card-description {
+    margin: 0;
+    font-size: $fs-sm;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+    color: $color-black;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: fit-content;
+    padding-bottom: $space-xxs;
+    border-bottom: 1px solid $color-primary;
+    font-size: $fs-base;
+    line-height: $lh-body;
+    text-decoration: none;
+    color: $color-primary;
+    transition: 0.4s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 1.75rem;
+    }
+
+    img {
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      img {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  @media (min-width: $tablet) {
+    padding: $space-3xl 0;
+
+    &__wrapper {
+      gap: $space-3xl;
+    }
+
+    &__card {
+      padding: $space-xl $space-lg;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding: 7.5rem 0 10rem;
+
+    &__wrapper {
+      gap: $space-3xl;
+    }
+
+    &__title {
+      font-size: $fs-h1;
+    }
+
+    &__card {
+      min-height: 23rem;
+      padding: $space-xl 2.5rem;
+    }
+  }
+}
