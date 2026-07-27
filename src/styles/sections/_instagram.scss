@@ -1,0 +1,96 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+.instagram {
+  padding: 3.75rem 0;
+  background-color: $color-background;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    padding: $space-xl $space-lg;
+    background-color: $color-primary;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: $fs-h3;
+    font-weight: $fw-regular;
+    line-height: $lh-heading;
+    letter-spacing: -0.05em;
+    color: $color-background;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-md;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $fs-base;
+    font-weight: $fw-regular;
+    line-height: $lh-body;
+    letter-spacing: $ls-small;
+    color: $color-background;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem 0.75rem;
+    border-radius: $radius-pill;
+    background-color: $color-background;
+    font-family: $font-primary;
+    font-size: $fs-base;
+    font-weight: $fw-regular;
+    line-height: $lh-body;
+    color: $color-primary;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-background;
+      border-color: $color-background;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  .instagram {
+    &__wrapper {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: $space-2xl;
+      max-width: 65rem;
+      min-height: 22rem;
+      margin: 0 auto;
+      padding: 7.5rem 6.9rem;
+    }
+
+    &__title {
+      width: 37rem;
+      font-size: $fs-h2;
+    }
+
+    &__content {
+      width: 10rem;
+      flex-shrink: 0;
+    }
+  }
+}
