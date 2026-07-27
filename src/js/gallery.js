@@ -23,6 +23,7 @@ const initMasonry = () => {
       itemSelector: '.projects__item',
       columnWidth: '.projects__item',
       percentPosition: true,
+      horizontalOrder: true,
       gutter: 32,
     });
   });
