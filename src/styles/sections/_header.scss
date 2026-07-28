@@ -23,24 +23,41 @@
 
   &__nav {
     display: none;
-
-    @media (min-width: $desktop) {
-      display: block;
-    }
   }
 
   &__menu {
     display: flex;
     align-items: center;
     gap: 3rem;
+    margin: 0;
+    padding: 0;
     list-style: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: $fs-sm;
+    font-family: inherit;
+    color: $color-black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 
   &__link {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
     color: $color-black;
     text-decoration: none;
     font-size: $fs-sm;
@@ -74,6 +91,57 @@
     transition: transform 0.3s ease;
   }
 
+  &__item--dropdown:hover &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    min-width: 220px;
+    margin: 0;
+    padding: 0.75rem 0;
+    list-style: none;
+    background: $color-white;
+    border-radius: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+    z-index: 10;
+  }
+
+  &__dropdown li {
+    margin: 0;
+  }
+
+  &__dropdown a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: $color-black;
+    text-decoration: none;
+    font-size: $fs-sm;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: $color-background;
+      color: $color-primary;
+    }
+  }
+
+  &__item--dropdown:hover &__dropdown,
+  &__item--dropdown:focus-within &__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
   &__search {
     display: flex;
     align-items: center;
@@ -82,9 +150,16 @@
     border: 0;
     background: transparent;
     cursor: pointer;
+    transition: transform 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    &__nav {
+      display: block;
     }
   }
 }
