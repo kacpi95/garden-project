@@ -1,17 +1,17 @@
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-black: #111111;
-$color-primary: #1B5B31;
-$color-secondary: #DCC1AB;
-$color-background: #F5F0EC;
+$color-primary: #1b5b31;
+$color-secondary: #dcc1ab;
+$color-background: #f5f0ec;
 
-$font-primary: "Inter", sans-serif;
-$font-heading: "Montserrat", sans-serif;
+$font-primary: 'Inter', sans-serif;
+$font-heading: 'Montserrat', sans-serif;
 
 $fw-regular: 400;
 $fw-medium: 500;
 
-$fs-xs: .75rem;
-$fs-sm: .875rem;
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
 $fs-base: 1rem;
 $fs-h3: 1.75rem;
 $fs-h2: 2.5rem;
@@ -24,8 +24,8 @@ $lh-display: 70px;
 
 $ls-small: -0.01em;
 
-$space-xxs: .25rem;
-$space-xs: .5rem;
+$space-xxs: 0.25rem;
+$space-xs: 0.5rem;
 $space-sm: 1rem;
 $space-md: 1.5rem;
 $space-lg: 2rem;
@@ -35,5 +35,12 @@ $space-3xl: 6rem;
 $space-4xl: 8rem;
 
 $radius-pill: 200px;
+$radius-card: 1.75rem;
+
+$transition-fast: 0.3s ease;
+$transition-base: 0.4s ease;
+$transition-slow: 0.45s ease;
+
+$shadow-card: 0 12px 24px rgba(0, 0, 0, 0.1);
 
 $container-width: 1440px;
