@@ -10,13 +10,23 @@
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
-          <a href="/" class="header__logo"
-            ><img src="/images/logo/logo-header.svg" alt="Giarddesign logo"
-          /></a>
+          <a href="/" class="header__logo">
+            <img src="/images/logo/logo-header.svg" alt="Giarddesign logo" />
+          </a>
+          <button
+            class="header__hamburger"
+            type="button"
+            aria-label="Otwórz menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <nav class="header__nav">
             <ul class="header__menu">
               <li class="header__item header__item--dropdown">
-                <button class="header__dropdown-toggle">
+                <button class="header__dropdown-toggle" type="button">
                   <span>Oferta</span>
                   <img
                     class="header__arrow"
@@ -31,13 +41,13 @@
                 </ul>
               </li>
               <li class="header__item">
-                <a href="#" class="header__link">O firmie</a>
+                <a href="#about" class="header__link">O firmie</a>
               </li>
               <li class="header__item">
-                <a href="#" class="header__link">Realizacje</a>
+                <a href="#projects" class="header__link">Realizacje</a>
               </li>
               <li class="header__item">
-                <a href="#" class="header__link">Kontakt</a>
+                <a href="#contact" class="header__link">Kontakt</a>
               </li>
               <li class="header__item">
                 <div class="header__search-wrapper">
@@ -131,7 +141,7 @@
         </div>
       </div>
     </section>
-    <section class="offer">
+    <section id="offer" class="offer">
       <div class="container">
         <div class="offer__wrapper">
           <div class="col-lg-10 offset-lg-1 offer__content">
@@ -230,7 +240,7 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
       <div class="container">
         <div class="row g-0 about__wrapper">
           <div class="col-12 col-lg-6">
@@ -273,7 +283,7 @@
         </div>
       </div>
     </section>
-    <section class="projects">
+    <section id="projects" class="projects">
       <div class="container">
         <div class="projects__header">
           <p class="projects__label">Realizacje</p>
