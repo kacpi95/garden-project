@@ -3,3 +3,4 @@ import './styles/main.scss';
 import './js/gallery';
 import './js/search';
 import './js/hamburger';
+import './js/swiper';

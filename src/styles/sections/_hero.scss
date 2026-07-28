@@ -2,6 +2,7 @@
 @use '../abstracts/breakpoints' as *;
 
 .hero {
+  position: relative;
   background: $color-secondary;
   overflow: hidden;
 
@@ -88,7 +89,7 @@
 
         img {
           content: url('/images/icons/arrow-right-grey.svg');
-          transform: rotate(270deg);
+          transform: rotate(-90deg);
         }
       }
     }
@@ -96,14 +97,16 @@
 
   &__image {
     position: relative;
+    display: flex;
+    width: 100%;
     height: 100%;
   }
 
   &__photo {
-    display: block;
     width: 100%;
-    height: 100%;
+    height: 737px;
     object-fit: cover;
+    display: block;
   }
 
   &__controls {
@@ -112,8 +115,9 @@
     bottom: 0;
     display: flex;
     gap: $space-lg;
-    padding: $space-md $space-lg;
+    padding: $space-xs $space-sm;
     background: $color-background;
+    z-index: 10;
   }
 
   &__control {
@@ -127,8 +131,16 @@
     cursor: pointer;
     transition: transform 0.3s ease;
 
-    &:hover {
-      transform: scale(1.1);
+    &--prev {
+      &:hover {
+        transform: translateX(-4px);
+      }
+    }
+
+    &--next {
+      &:hover {
+        transform: translateX(4px);
+      }
     }
   }
 
@@ -136,6 +148,10 @@
     &__buttons {
       flex-direction: row;
       gap: 2.25rem;
+    }
+
+    &__controls {
+      padding: $space-md $space-lg;
     }
   }
 
@@ -162,12 +178,6 @@
       max-width: 489px;
     }
 
-    &__photo {
-      width: 688px;
-      height: 737px;
-      max-width: none;
-    }
-
     &__controls {
       width: 192px;
       height: 96px;
@@ -179,11 +189,11 @@
       width: 48px;
       height: 48px;
     }
-  }
 
-  @media (min-width: $wide) {
-    &__controls {
-      right: -52px;
+    &__slider-col {
+      display: flex;
+      padding-right: 0;
     }
   }
+
 }
