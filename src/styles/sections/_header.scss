@@ -157,6 +157,37 @@
     }
   }
 
+  &__search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__search-input {
+    width: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    opacity: 0;
+    background: transparent;
+    font-size: $fs-sm;
+    transition:
+      width 0.3s ease,
+      opacity 0.3s ease,
+      padding 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  &__search-wrapper--active {
+    .header__search-input {
+      width: 220px;
+      padding: 0.25rem 0;
+      opacity: 1;
+      border-color: $color-primary;
+    }
+  }
+
   @media (min-width: $desktop) {
     &__nav {
       display: block;
