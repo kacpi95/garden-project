@@ -1,19 +1,18 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/breakpoints' as *;
+@use '../abstracts/mixins' as *;
 
 .footer {
   padding: 5rem 0;
   background-color: $color-black;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 7.5rem;
   }
 
   &__top {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 3.9rem;
   }
 
@@ -47,22 +46,23 @@
   }
 
   &__button {
+    @include interactive-focus;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.75rem 1.5rem 0.875rem;
+    border: 1px solid transparent;
     border-radius: $radius-pill;
     background-color: $color-primary;
     color: $color-background;
     text-decoration: none;
-    border: 1px solid transparent;
     transition:
-      background-color 0.3s ease,
-      border-color 0.3s ease;
+      background-color $transition-fast,
+      border-color $transition-fast;
 
     &:hover {
-      border-color: $color-background;
       background-color: transparent;
+      border-color: $color-background;
     }
   }
 
@@ -78,32 +78,23 @@
     margin: 0;
     padding: 0;
     list-style: none;
-
-    a {
-      font-size: $fs-sm;
-      line-height: 150%;
-      letter-spacing: $ls-small;
-      color: $color-background;
-      text-decoration: none;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: $color-primary;
-      }
-    }
   }
 
   &__contact {
     display: flex;
     gap: $space-xl;
+  }
 
+  &__menu,
+  &__contact {
     a {
+      @include interactive-focus;
       font-size: $fs-sm;
-      line-height: 150%;
+      line-height: $lh-body;
       letter-spacing: $ls-small;
       color: $color-background;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color $transition-fast;
 
       &:hover {
         color: $color-primary;
@@ -122,7 +113,6 @@
     font-size: $fs-base;
     line-height: $lh-body;
     letter-spacing: $ls-small;
-
     color: $color-background;
   }
 

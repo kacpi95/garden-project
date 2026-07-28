@@ -1,5 +1,6 @@
 @use './abstracts/variables';
 @use './abstracts/breakpoints';
+@use './abstracts/mixins';
 @use './base/reset';
 @use './base/typography';
 
@@ -11,4 +12,4 @@
 @use './sections/instagram';
 @use './sections/footer';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@500&display=swap');

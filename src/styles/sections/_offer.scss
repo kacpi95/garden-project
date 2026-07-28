@@ -1,19 +1,18 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/breakpoints' as *;
+@use '../abstracts/mixins' as *;
 
 .offer {
   padding: $space-2xl 0;
-  background-color: $color-background;
+  background: $color-background;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $space-2xl;
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $space-sm;
   }
 
@@ -26,8 +25,7 @@
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $space-lg;
     max-width: 45rem;
   }
@@ -61,26 +59,26 @@
 
   &__card {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
     gap: $space-lg;
     width: 100%;
     min-height: 23rem;
     padding: $space-xl $space-md;
-    background-color: $color-white;
-    border-radius: 1.75rem;
-    transition: 0.4s ease;
+    border-radius: $radius-card;
+    background: $color-white;
+    transition:
+      transform $transition-base,
+      box-shadow $transition-base;
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: $shadow-card;
     }
   }
 
   &__card-content {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $space-sm;
   }
 
@@ -124,17 +122,18 @@
     line-height: $lh-body;
     text-decoration: none;
     color: $color-primary;
-    transition: 0.4s ease;
+    transition: color $transition-base;
+    @include interactive-focus;
 
     &::after {
       content: '';
       position: absolute;
       inset: 0;
-      border-radius: 1.75rem;
+      border-radius: $radius-card;
     }
 
     img {
-      transition: transform 0.4s ease;
+      transition: transform $transition-base;
     }
 
     &:hover {
@@ -159,16 +158,11 @@
   @media (min-width: $desktop) {
     padding: 7.5rem 0 10rem;
 
-    &__wrapper {
-      gap: $space-3xl;
-    }
-
     &__title {
       font-size: $fs-h1;
     }
 
     &__card {
-      min-height: 23rem;
       padding: $space-xl 2.5rem;
     }
   }

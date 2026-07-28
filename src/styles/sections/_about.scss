@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/breakpoints' as *;
+@use '../abstracts/mixins' as *;
 
 .about {
   background: $color-primary;
@@ -21,8 +22,7 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: center;
     gap: 4.5rem;
     padding: $space-3xl 0;
@@ -30,15 +30,13 @@
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $space-sm;
     max-width: 500px;
   }
 
   &__copy {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 2.5rem;
   }
 
@@ -56,11 +54,11 @@
     font-size: $fs-h2;
     font-weight: $fw-medium;
     line-height: $lh-heading;
-    letter-spacing: -0.03em;
+    letter-spacing: $ls-small;
 
     span {
-      font-style: italic;
       font-family: $font-primary;
+      font-style: italic;
     }
   }
 
@@ -72,6 +70,7 @@
   }
 
   &__button {
+    @include interactive-focus;
     display: inline-flex;
     align-items: center;
     gap: $space-xs;
@@ -82,11 +81,11 @@
     color: inherit;
     text-decoration: none;
     transition:
-      background-color 0.4s ease,
-      color 0.4s ease;
+      background-color $transition-base,
+      color $transition-base;
 
     img {
-      transition: transform 0.4s ease;
+      transition: transform $transition-base;
     }
 
     &:hover {
